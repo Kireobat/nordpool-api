@@ -1,8 +1,7 @@
-create table if not exists nordpool_api.city (
+create table if not exists nordpool_api.price (
     id serial primary key not null,
-    city_id varchar references nordpool_api.city(id),
+    city_id integer references nordpool_api.city(id),
     price_raw real not null,
-    price real not null,
     currency_id varchar references nordpool_api.currency(id),
     timestamp timestamptz
 );
