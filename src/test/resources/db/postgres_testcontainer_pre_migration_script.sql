@@ -1,0 +1,1 @@
+CREATE SCHEMA nordpool_api;

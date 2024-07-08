@@ -1,0 +1,14 @@
+services:
+  postgres:
+    build:
+      context: .
+      dockerfile: ./postgres-local/Dockerfile
+    environment:
+      - 'POSTGRES_PASSWORD=postgres'
+    container_name: nordpool-postgres
+    ports:
+      - "5432:5432"
+    labels:
+      org.springframework.boot.service-connection: postgres
+    healthcheck:
+      test: ["CMD-SHELL", "exit 0"]
